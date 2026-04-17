@@ -29,3 +29,11 @@ jobs:
 
       - name: Run tests
         run: pytest
+
+      - name: Upload pytest html report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: pytest-html-report
+          path: report.html
+          if-no-files-found: warn
