@@ -8,3 +8,7 @@ def read_txt_file(file_path: str) -> list[str]:
         raise ValueError("Підтримуються лише .txt файли")
 
     return path.read_text(encoding="utf-8").splitlines()
+
+
+def filter_lines_by_keyword(lines: list[str], keyword: str) -> list[str]:
+    return [line for line in lines if keyword in line]
