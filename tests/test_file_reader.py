@@ -30,7 +30,11 @@ def test_read_txt_file_invalid_extension(invalid_file) -> None:
         ("missing", []),
     ],
 )
-def test_filter_lines_by_keyword(sample_lines, keyword: str, expected: list[str]) -> None:
+def test_filter_lines_by_keyword(
+    sample_lines,
+    keyword: str,
+    expected: list[str],
+) -> None:
     assert filter_lines_by_keyword(sample_lines, keyword) == expected
 
 
@@ -42,7 +46,11 @@ def test_filter_lines_by_keyword(sample_lines, keyword: str, expected: list[str]
         ([], ""),
     ],
 )
-def test_write_filtered_file(tmp_path, lines: list[str], expected: str) -> None:
+def test_write_filtered_file(
+    tmp_path,
+    lines: list[str],
+    expected: str,
+) -> None:
     output_file = tmp_path / "filtered.txt"
 
     write_filtered_file(lines, str(output_file))

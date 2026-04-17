@@ -15,7 +15,10 @@ def filter_lines_by_keyword(lines: list[str], keyword: str) -> list[str]:
     return [line for line in lines if keyword in line]
 
 
-def write_filtered_file(lines: list[str], output_path: str = "filtered.txt") -> None:
+def write_filtered_file(
+    lines: list[str],
+    output_path: str = "filtered.txt",
+) -> None:
     Path(output_path).write_text("\n".join(lines), encoding="utf-8")
 
 

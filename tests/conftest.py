@@ -13,7 +13,10 @@ def sample_lines() -> list[str]:
 @pytest.fixture
 def sample_txt_file(tmp_path):
     file_path = tmp_path / "input.txt"
-    file_path.write_text("python keyword line\nregular text\nanother keyword match\n", encoding="utf-8")
+    file_path.write_text(
+        "python keyword line\nregular text\nanother keyword match\n",
+        encoding="utf-8",
+    )
     return file_path
 
 
